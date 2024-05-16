@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+button {
+	padding: 10px;
+  margin: 7px;
+  border: none;
+  border-radius: 55px;
+  background-color: rgb(49, 113, 231);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+button:hover {
+  border-radius: 55px;
+  background-color:rgb(49, 113, 231);
+}
+
+button:active {
+  border-radius: 55px;
+  background-color: rgb(49, 113, 231);
+}
+
+
+#root{
+  background-color: rgb(255, 255, 255);
+  
+  background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+  min-height: 100vh;
+  
+}

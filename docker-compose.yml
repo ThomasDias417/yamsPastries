@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+
+  app:
+    build: ./app
+    container_name: react_app
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+
+  api:
+    build: ./api
+    ports:
+      - 3001:3001
+    volumes:
+      - ./api:/usr/src/app
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+    depends_on:
+      - mongoDb
+
+  mongoDb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+
+  mongo-import:
+    image: mongo:latest
+    volumes:
+      - ./pastries.json:/tmp/pastries.json
+    depends_on:
+      - mongoDb
+    command: mongoimport --host mongoDb:27017 --db yams_db --collection pastries --jsonArray --type json --file /tmp/pastries.json  

@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: #f1f1f1;
+  }
+  
+  .flexRow {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .imageSection {
+    flex: 1;
+    
+    background-image: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 149, 243, 0.286)), url('../../public/images/pastries/brioche-pain-perdu.jpeg') ;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .formSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+  }
+  
+  .formContainer {
+    background-color: rgba(33, 150, 243, 0.9);
+    padding: 2em;
+    border-radius: 32px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .title {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    color: white;
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    width: -webkit-fill-available;
+    width: -moz-available;  
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    
+  }
+  
+  .button {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    padding: 15px;
+    background-color: white;
+    color: #2196F3;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .switchText {
+    color: white;
+    font-size: 0.9em;
+    margin-top: 20px;
+  }
+  
+  .link {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }

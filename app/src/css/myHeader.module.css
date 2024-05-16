@@ -1,0 +1,78 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 15px;
+   
+    background: #2196f340;
+    margin: 10Px;
+    margin-top: 0px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.main button {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.main img {
+    width: 40px;
+    aspect-ratio: 1;
+}
+
+.main img:hover {
+    transform: scale(1.2);
+}
+
+.home {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+
+
+
+.connexionBtn, .deconnexionBtn {
+    background-color: rgb(49, 113, 231) !important;
+    color: rgb(255, 255, 255) !important;
+    padding: 15px !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    border-radius: 55px;
+   
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.deconnexionBtn {
+    grid-area: 2 / 3 / 3 / 4;
+    justify-self: flex-end;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color:  rgb(255, 255, 255);
+}
+
+.deconnexionBtn:hover {
+    background-color: rgb(149, 119, 185);
+}
+
+.deconnexionBtn:active {
+    background-color: rgb(138, 96, 189);
+}
+
+
+
+.seeWinners{
+    background-color: rgba(49, 113, 231, 0.122) !important;
+    color: rgb(49, 113, 231) !important;
+    padding: 15px !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    border-radius: 55px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}

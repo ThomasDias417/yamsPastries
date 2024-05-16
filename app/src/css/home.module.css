@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding: 3rem;
+ 
+}
+
+
+
+h1 {
+  color: #2196F3;
+  font-size: 3rem !important;
+}
+.username{
+  font-size: 13px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-block: 20px;
+}
+  
+.game_over {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.winners {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  justify-content: center;
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+.connexion p {
+  margin: 0px;
+}
+.buttons{
+  
+  margin: 0px !important;
+  margin-top: 20px !important ;
+}
+.connexion div button{
+  margin: 0px !important;
+  
+}
