@@ -2,4 +2,4 @@
 
 # docker compose up
 
-# play
+# play http://localhost:3000/
