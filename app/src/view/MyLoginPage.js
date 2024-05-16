@@ -28,10 +28,10 @@ const MyLoginPage = () => {
     if (data.user) {
       localStorage.setItem('token', data.user);
       dispatch(addUser({ email: email, username: data.username, token: data.user }));
-      alert('Login successful');
+      alert('Connecté');
       window.location.href = '/yummy-game';
     } else {
-      alert('Please check your username and password');
+      alert('erreur username/password');
     }
     console.log(data);
   }

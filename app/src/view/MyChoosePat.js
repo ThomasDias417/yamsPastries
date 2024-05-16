@@ -38,14 +38,14 @@ function MyChoosePat() {
             numberOfPastriesChooseable--;
             dispatch(updateUser({ field: 'numberOfPastriesChooseable', value: numberOfPastriesChooseable }));
         } else {
-            setWarningMessage("Tu ne peux pas choisir plus de " + userInfo.numberOfPastriesWon);
+            setWarningMessage("Tu as gagner  " + userInfo.numberOfPastriesWon + " patiserie");
         }
     }
 
     function confirmSelection() {
         setWarningMessage("");
         if (pastriesChoosed.length < userInfo.numberOfPastriesWon && pastries.length > 0) {
-            setWarningMessage("tu peux encore en choisir " + (userInfo.numberOfPastriesWon - pastriesChoosed.length));
+            setWarningMessage("il reste " + (userInfo.numberOfPastriesWon - pastriesChoosed.length)+ " choix");
         } else {
             fetch("http://localhost:3001/choose-pastries", {
                 method: 'POST',
@@ -60,7 +60,7 @@ function MyChoosePat() {
                 }),
             }).then(() => {
                 dispatch(updateUser({ field: 'numberOfPastriesChooseable', value: 0 }));
-                alert('Choix validé !');
+                alert('VALIDE');
                 navigate('/');
             });
         }

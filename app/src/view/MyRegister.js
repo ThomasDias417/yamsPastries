@@ -27,7 +27,7 @@ const MyRegister = () => {
     if (data.status === 'ok') {
       navigate('/connexion');
     } else {
-      alert('Cette Adresse email existe déjà !');
+      alert('email existe déjà !');
     }
     console.log(data);
   }

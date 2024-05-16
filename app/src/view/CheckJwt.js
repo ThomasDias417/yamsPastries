@@ -8,7 +8,7 @@ const CheckJwt = (token) => {
     const checkExpiration = () => {
       if (token) {
         const decodedToken = jwtDecode(token);
-        const currentTime = Date.now() / 1000; // Convert milliseconds to seconds
+        const currentTime = Date.now() / 1000; 
 
         if (decodedToken.exp < currentTime) {
           setIsExpired(true);
@@ -20,7 +20,7 @@ const CheckJwt = (token) => {
 
     checkExpiration();
 
-    const intervalId = setInterval(checkExpiration, 1000); // Check expiration every second
+    const intervalId = setInterval(checkExpiration, 1000);
 
     return () => clearInterval(intervalId);
   }, [token]);

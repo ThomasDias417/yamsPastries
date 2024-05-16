@@ -19,7 +19,7 @@ router.get("/pastries-left-to-win", async(req, res) => {
       res.json(pastriesLeft)
     } catch (err) {
         console.error("Erreur :", err)
-        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des pâtisseries" })
+        res.status(500).json({ message: "erreur db" })
     }
 })
 
@@ -33,7 +33,6 @@ router.post("/choose-pastries", async(req, res) => {
       const user = await User.findOne({ email: email })
   
       if (user) {
-        // create a winner
         await Winner.create({
           userName: user.name,
           email: user.email,
@@ -42,21 +41,19 @@ router.post("/choose-pastries", async(req, res) => {
           pastries: req.body.pastriesChoosed,
         })
   
-        // update stock & quantityWon
         let pastriesChoosed = req.body.pastriesChoosed
         await Promise.all(pastriesChoosed.map(async (pastry: typeof Pastry) => {
-          // Find and update the pastry
-          await Pastry.findOneAndUpdate(
-            { name: pastry.name, stock: { $gt: 0 } },
-            { $inc: { quantityWon: 1, stock: -1 }},
-          )
+        await Pastry.findOneAndUpdate(
+          { name: pastry.name, stock: { $gt: 0 } },
+          { $inc: { quantityWon: 1, stock: -1 }},
+        )
         }))
       }
       res.json({ status: 'ok'})
   
     } catch (err) {
         console.error("Erreur :", err)
-            return res.status(500).json({ status: 'error', error: 'Invalid token or user not found' })
+            return res.status(500).json({ status: 'error', error: 'token error' })
     }
 })
 

@@ -28,11 +28,10 @@ const YummyGame = () => {
   const [message, setMessage] = useState("");
   const [playButtonVisible, setPlayButtonVisible] = useState(true);
 
-  const [pageReloaded, setPageReloaded] = useState(true);
   const [showWinnerDiv, setShowWinnerDiv] = useState(false);
 
   useEffect(() => {
-    setPageReloaded(false);
+    
 
     const fetchData = async () => {
       let isTokenExpired = isExpired(token);
@@ -50,7 +49,7 @@ const YummyGame = () => {
     fetchData();
   }, []);
 
-  // Put chancesLeft in the store and remove this function ?
+  
   async function fetchChancesLeft(email) {
     try {
       const response = await fetch(
@@ -152,12 +151,8 @@ const YummyGame = () => {
         dispatch(updateUser({ field: "chancesLeft", value: data.chancesLeft }));
         setMessage(
           data.chancesLeft === 0
-            ? "Tu as déjà lancé les dés 3 fois."
-            : "A toi de jouer " +
-                userInfo.username +
-                " ! Tu peux lancer les dés encore " +
-                data.chancesLeft +
-                " fois."
+            ? "vous n'avez plus d'essai"
+            : "jouer, il reste : " + data.chancesLeft + "chance"
         );
       }
 
@@ -213,7 +208,7 @@ const YummyGame = () => {
               textAlign: "center",
             }}
           >
-            Bravo ! Vous avez gagné 1 pâtisserie
+            vous avez gagner
           </p>
         </div>
       </div>

@@ -32,7 +32,7 @@ router.get("/pastries-left", async (req, res) => {
     }
 })
 
-// Return the list of images
+
 router.get("/pastries-img", async(req, res) => {
     try {
       const pastries = await Pastry.find()

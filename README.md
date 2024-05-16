@@ -1,5 +1,5 @@
-# yummy-yams
+# clone
 
-# DOCKER
+# docker compose up
 
-# TODO
+# play

@@ -6,7 +6,7 @@ import jwtKey from "../utility/jwtKey"
 
 const router = express.Router()
 
-// REGISTRATION
+
 router.post('/registration', async (req, res) => {
   console.log(req.body)
 
@@ -28,13 +28,10 @@ router.post('/registration', async (req, res) => {
 })
 
 
-// Replace "your_secret_key" with your actual secret key
-
-// LOGIN
 router.post('/login', async (req, res) => {
   try {
     const users = await User.find({ email: req.body.email });
-    const user = users[0]; // Assuming there's only one user with the given email
+    const user = users[0]; 
 
     console.log(user);
 
