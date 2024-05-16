@@ -17,7 +17,7 @@ function MyChoosePat() {
     useEffect(() => {
         dispatch(updateUser({ field: 'numberOfPastriesChooseable', value: userInfo.numberOfPastriesWon }));
 
-        fetch("http://localhost:3001/pastries-left-to-win")
+        fetch("http://localhost:3001/patisserie-manquante")
         .then(res => res.json())
         .then((stock) => {
             if (stock.length < userInfo.numberOfPastriesWon) {
@@ -47,7 +47,7 @@ function MyChoosePat() {
         if (pastriesChoosed.length < userInfo.numberOfPastriesWon && pastries.length > 0) {
             setWarningMessage("il reste " + (userInfo.numberOfPastriesWon - pastriesChoosed.length)+ " choix");
         } else {
-            fetch("http://localhost:3001/choose-pastries", {
+            fetch("http://localhost:3001/patisserie-choix", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function MyChoosePat() {
             }).then(() => {
                 dispatch(updateUser({ field: 'numberOfPastriesChooseable', value: 0 }));
                 alert('VALIDE');
-                navigate('/');
+                navigate('/liste_des_gagnants');
             });
         }
     }

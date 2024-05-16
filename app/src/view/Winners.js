@@ -6,7 +6,7 @@ function Winners() {
     console.log(winners);
 
     useEffect(() => {
-        fetch("http://localhost:3001/winners")
+        fetch("http://localhost:3001/gagnants")
             .then(res => res.json())
             .then((result) => {
                 setWinners(result);

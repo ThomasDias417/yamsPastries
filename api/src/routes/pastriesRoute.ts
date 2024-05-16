@@ -11,11 +11,11 @@ router.get("/pastries", async (req, res) => {
         res.json(pastries)
     } catch (err) {
         console.error("Erreur :", err)
-        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des pâtisseries" })
+        res.status(500).json({ message: "error db" })
     }
 })
 
-router.get("/pastries-left", async (req, res) => {
+router.get("/patisserie-restant", async (req, res) => {
     try {
         const pastries = await Pastry.find()
         let pastriesLeft: number = 0
@@ -28,12 +28,12 @@ router.get("/pastries-left", async (req, res) => {
         res.json(pastriesLeft.toString())
     } catch (err) {
         console.error("Erreur :", err)
-        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des pâtisseries" })
+        res.status(500).json({ message: "error db" })
     }
 })
 
 
-router.get("/pastries-img", async(req, res) => {
+router.get("/patisserie-image", async(req, res) => {
     try {
       const pastries = await Pastry.find()
       let pastriesImg: string[] = []

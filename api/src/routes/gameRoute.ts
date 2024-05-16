@@ -18,13 +18,10 @@ router.get("/chances-left/:email", async (req, res) => {
       if (!user) {
         return res.status(404).json({ message: "Utilisateur non trouvé" })
       }
-  
-      console.log(user)
       let chancesLeft: number = user.chancesLeft
-      console.log("chances left : " + chancesLeft)
       res.json(chancesLeft.toString())
     } catch (err) {
-        console.error("Erreur :", err)
+        console.error(err)
         res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des chances restantes" })
     }
 })
@@ -51,7 +48,7 @@ router.post("/rolling-dices", async(req, res) => {
         let won = 0
         if (user.chancesLeft <= 0) {
           dices = [0, 0, 0, 0, 0]
-          return res.json({ status: 'error', error: 'No more changes. The dices have been rolled 3 times', chancesLeft: user.chancesLeft, dices: dices, numberOfPastriesWon: won })
+          return res.json({ status: 'error', error: 'plus de chance', chancesLeft: user.chancesLeft, dices: dices, numberOfPastriesWon: won })
         }
         
         let occurenceDice = resultPastriesWon(dices)
@@ -69,7 +66,7 @@ router.post("/rolling-dices", async(req, res) => {
   
     } catch (error) {
           console.log(error)
-          return res.status(500).json({ status: 'error', error: 'Invalid token or user not found' })
+          return res.status(500).json({ status: 'error', error: 'token error' })
     }
 })
 

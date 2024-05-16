@@ -11,20 +11,20 @@ import jwtKey from "../utility/jwtKey"
 const router = express.Router()
 
 
-router.get("/pastries-left-to-win", async(req, res) => {
+router.get("/patisserie-manquante", async(req, res) => {
     try {
       let pastriesLeft = await Pastry.find({
         stock: { $gt: 0 },
       })
       res.json(pastriesLeft)
     } catch (err) {
-        console.error("Erreur :", err)
+        console.error(err)
         res.status(500).json({ message: "erreur db" })
     }
 })
 
 
-router.post("/choose-pastries", async(req, res) => {
+router.post("/patisserie-choix", async(req, res) => { //protected
     const token: string = req.headers['x-access-token'] as string;
   
     try {

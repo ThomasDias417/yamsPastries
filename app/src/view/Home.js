@@ -23,7 +23,7 @@ function Home() {
     const [isUserConnected, setIsUserConnected] = useState();
 
     useEffect(() => {
-        fetch("http://localhost:3001/pastries-img")
+        fetch("http://localhost:3001/patisserie-image")
         .then(res => res.json())
         .then(
             (result) => {
@@ -31,7 +31,7 @@ function Home() {
             }
         );
 
-        fetch("http://localhost:3001/pastries-left")
+        fetch("http://localhost:3001/patisserie-restant")
         .then(res => res.json())
         .then(
             (pastriesLeft) => {
