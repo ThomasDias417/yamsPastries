@@ -29,10 +29,10 @@ router.get("/chances-left/:email", async (req, res) => {
 
 router.post("/rolling-dices", async(req, res) => {
     let dices = [
-      4,
-      4,
-      4,
-      4,
+      2,
+      2,
+      2,
+      2,
       randomNumber()
     ]
     console.log(dices)
