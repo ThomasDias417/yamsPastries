@@ -160,7 +160,7 @@ const YummyGame = () => {
     } else {
       const errorResponse = await response.json();
       console.error(errorResponse);
-      alert(" Oup's ! Veuillez vous reconnecter.");
+      alert("connection expiré");
       navigate("/connexion");
     }
   }
